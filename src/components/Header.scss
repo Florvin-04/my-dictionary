@@ -1,0 +1,88 @@
+@use "../functionSASS/function.scss" as *;
+
+.header {
+  outline: 1px solid red;
+  padding-block: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .left-side__container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+
+    .dropDown-btn {
+      color: hsl(var(--body-color));
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .font__lists {
+      top: 2.3rem;
+      right: 7rem;
+      position: absolute;
+      background-color: hsl(var(--body-background));
+      outline: 1px solid red;
+
+      padding: 0em 1em 1em 1em;
+      text-align: left;
+
+      &--item {
+        margin-top: 1rem;
+        cursor: pointer;
+        display: block;
+        color: hsl(var(--body-color));
+
+        &:hover {
+          color: hsl(var(--primary-100));
+        }
+      }
+    }
+
+    .theme {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      position: relative;
+      outline: 1px solid red;
+      > label {
+        cursor: pointer;
+      }
+
+      > input {
+        visibility: hidden;
+      }
+
+      > input:checked + .circle::after {
+        left: 55%;
+      }
+
+      .circle {
+        background-color: red;
+        position: absolute;
+        height: 90%;
+        width: 45%;
+        border-radius: rem(100);
+
+        &::after {
+          content: "";
+          background-color: white;
+          aspect-ratio: 1 / 1;
+          width: 40%;
+          position: absolute;
+          border-radius: 50%;
+
+          top: 50%;
+          left: 5%;
+
+          transform: translate(0%, -50%);
+
+          transition: left 0.1s ease-in;
+        }
+      }
+    }
+  }
+}
