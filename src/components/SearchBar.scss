@@ -1,0 +1,28 @@
+@use "../functionSASS/function.scss" as *;
+
+form {
+  position: relative;
+//   outline: 1px solid red;
+
+  > input {
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      top: -25%;
+      background-color: hsl(var(--body-background));
+      font-size: 0.5rem;
+      //   left: 5%;
+    }
+  }
+
+  > label {
+    top: 0;
+    position: absolute;
+    left: 0;
+    transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}

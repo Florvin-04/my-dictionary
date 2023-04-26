@@ -15,9 +15,12 @@
 
     .dropDown-btn {
       color: hsl(var(--body-color));
+      background-color: transparent;
       display: flex;
       align-items: center;
       gap: 1rem;
+      cursor: pointer;
+      border: none;
     }
 
     .font__lists {

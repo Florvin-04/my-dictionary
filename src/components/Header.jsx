@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.scss";
 function Header() {
+  const [dropdown, setDropDown] = useState(false);
+
   return (
     <header className="header">
       <div className="logo">
@@ -33,7 +35,10 @@ function Header() {
       </div>
 
       <div className="left-side__container">
-        <button className="dropDown-btn">
+        <button
+          className="dropDown-btn"
+          onClick={() => setDropDown((prev) => !prev)}
+        >
           Fonts
           <svg
             width="13"
@@ -43,19 +48,21 @@ function Header() {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M0.469666 1.53033L1.53033 0.469666L7 5.93934L12.4697 0.469666L13.5303 1.53033L7 8.06066L0.469666 1.53033Z"
               fill="#A445ED"
             />
           </svg>
         </button>
 
-        <ul className="font__lists">
-          <li className="font__lists--item">fontasdasd1</li>
-          <li className="font__lists--item">font1</li>
-          <li className="font__lists--item">font1</li>
-        </ul>
+        {dropdown && (
+          <ul className="font__lists">
+            <li className="font__lists--item">fontasdasd1</li>
+            <li className="font__lists--item">font1</li>
+            <li className="font__lists--item">font1</li>
+          </ul>
+        )}
 
         <div className="theme">
           <input
