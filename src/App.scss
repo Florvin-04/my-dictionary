@@ -1,11 +1,36 @@
+@use "./functionSASS/function.scss" as *;
+
 #root {
   // max-width: 1280px;
   // margin: 0 auto;
   // padding: 2rem;
   // text-align: center;
+  // background-color: blue;
+  height: 100vh;
 }
 
+.App {
+  min-height: 100%;
+  background-color: hsl(var(--body-background));
+  font-family: var(--font-family);
 
-.App{
-  
+  &[data-theme="dark-theme"] {
+    --body-background: 0 0% 2%;
+    --body-color: 0 0% 100%;
+    --moon-color: 274 82% 60%;
+    --search-background: 0 0% 12%;
+  }
+
+  &[data-font="font-Serif"] {
+    --font-family: "Lora";
+  }
+
+  &[data-font="font-Mono"] {
+    --font-family: "Inconsolata";
+  }
+
+  .dict__container {
+    width: min(90%, rem(700));
+    margin-inline: auto;
+  }
 }

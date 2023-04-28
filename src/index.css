@@ -45,7 +45,8 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: "Inter";
+  
+  /* font-family: "lora"; */
 }
 
 /* A elements that don't have a class get default styles */
@@ -94,17 +95,6 @@ select {
   --primary-100: 274 82% 60%;
 }
 
-[data-theme="dark-theme"] {
-  --body-background: 0 0% 2%;
-  --body-color: 0 0% 100%;
-  --moon-color: 274 82% 60%;
-  --search-background: 0 0% 12%;
-}
 
-[data-font="font-serif"] {
-  --font_family: "Lora";
-}
 
-[data-font="font-mono"] {
-  --font_family: "Inconsolata";
-}
+

@@ -1,7 +1,22 @@
 import React, { useState } from "react";
 import "./Header.scss";
+import { useGlobalData } from "./AppContext";
 function Header() {
+  const { setDarkMode, darkMode, setFont, font } = useGlobalData();
   const [dropdown, setDropDown] = useState(false);
+
+  function handleDarkMode(e) {
+    const { name, checked } = e.target;
+
+    setDarkMode((prev) => ({
+      ...prev,
+      [name]: checked,
+    }));
+  }
+
+  function changeFont(value) {
+    setFont(value);
+  }
 
   return (
     <header className="header">
@@ -39,7 +54,7 @@ function Header() {
           className="dropDown-btn"
           onClick={() => setDropDown((prev) => !prev)}
         >
-          Fonts
+          {font}
           <svg
             width="13"
             height="9"
@@ -58,9 +73,24 @@ function Header() {
 
         {dropdown && (
           <ul className="font__lists">
-            <li className="font__lists--item">fontasdasd1</li>
-            <li className="font__lists--item">font1</li>
-            <li className="font__lists--item">font1</li>
+            <li
+              className="font__lists--item"
+              onClick={() => changeFont("Inter")}
+            >
+              Inter
+            </li>
+            <li
+              className="font__lists--item"
+              onClick={() => changeFont("Serif")}
+            >
+              Serif
+            </li>
+            <li
+              className="font__lists--item"
+              onClick={() => changeFont("Mono")}
+            >
+              Mono
+            </li>
           </ul>
         )}
 
@@ -68,6 +98,10 @@ function Header() {
           <input
             type="checkbox"
             id="theme"
+            name="darkMode"
+            value={darkMode.darkMode}
+            checked={darkMode.darkMode}
+            onChange={handleDarkMode}
           />
           <label
             className="circle"

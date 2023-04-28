@@ -1,0 +1,100 @@
+@use "../functionSASS/function.scss" as *;
+
+.meaning__container {
+  //
+  margin-top: 3rem;
+  border-top: 1px solid hsl(var(--body-color) / 0.2);
+
+  .meaning-title {
+    color: hsl(var(--body-color));
+    font-size: 2rem;
+    font-weight: 700;
+    position: relative;
+    bottom: 1.7rem;
+    background-color: hsl(var(--body-background));
+
+    width: max-content;
+  }
+
+  .definitions {
+    > p {
+      color: hsl(0, 0%, 46%);
+      font-size: 1.3rem;
+    }
+
+    li {
+      margin-top: 1rem;
+      .definition {
+        color: hsl(var(--body-color));
+        font-size: 1.1rem;
+        margin-left: 4rem;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          aspect-ratio: 1 / 1;
+          width: 0.5rem;
+          background-color: hsl(var(--primary-100));
+          border-radius: 50%;
+          left: -1.5rem;
+          // top: 50%;
+          transform: translate(0, 110%);
+        }
+      }
+
+      .example {
+        color: hsl(0, 0%, 46%);
+
+        font-size: 1.1rem;
+        margin-left: 4rem;
+      }
+    }
+  }
+
+  .synonyms {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+
+    > p {
+      color: hsl(0, 0%, 46%);
+      font-size: 1.1rem;
+    }
+    
+    &__list {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      
+      &--item {
+          color: hsl(274, 82%, 60%);
+          font-weight: 600;
+          font-size: 1.1rem;
+      }
+    }
+  }
+  
+  .antonyms {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+
+    > p {
+      color: hsl(0, 0%, 46%);
+      font-size: 1.1rem;
+    }
+    
+    &__list {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      
+      &--item {
+          color: hsl(274, 82%, 60%);
+          font-weight: 600;
+          font-size: 1.1rem;
+      }
+    }
+  }
+}

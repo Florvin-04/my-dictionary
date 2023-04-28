@@ -1,28 +1,48 @@
 @use "../functionSASS/function.scss" as *;
 
 form {
+  margin-top: 2rem;
   position: relative;
-//   outline: 1px solid red;
+  //   outline: 1px solid red;
 
   > input {
+    padding: 1em;
     width: 100%;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: hsl(var(--search-background));
+    color: hsl(var(--body-color));
 
     &:focus {
-      outline: none;
+      // outline: none;
+      outline: rem(1) solid hsl(var(--primary-100));
     }
     &:focus + label,
     &:not(:placeholder-shown) + label {
       top: -25%;
-      background-color: hsl(var(--body-background));
-      font-size: 0.5rem;
-      //   left: 5%;
+      // background-color: hsl(var(--body-background));
+      font-size: 0.8rem;
+        left: 0%;
     }
   }
 
-  > label {
-    top: 0;
+  .submit-btn {
     position: absolute;
-    left: 0;
+    right: 5%;
+    top: 50%;
+    transform: translate(0%, -50%);
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+  }
+
+  > label {
+    left: 5%;
+    top: 50%;
+    transform: translate(0%, -50%);
+    position: absolute;
+    color: hsl(var(--body-color));
+
     transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
